@@ -10,6 +10,7 @@ import static org.junit.Assert.*;
 public class CounterServiceTest {
 
     private static final Integer INIT_VAL = 123;
+    private static final Double INIT_D = 100.5;
     private CounterService counterService;
 
     @Before
@@ -29,6 +30,12 @@ public class CounterServiceTest {
         counterService.getAndIncrement();
         CounterValue value = counterService.getAndIncrement();
         Assert.assertEquals(expectedValue, value.getValue());
+    }
+
+    @Test
+    public void shouldReturnInitDoubleValueOnFirstCall() {
+        double value = counterService.getTestDouble(10);
+        Assert.assertEquals(INIT_D + 10, value, 0.0);
     }
 
 }
