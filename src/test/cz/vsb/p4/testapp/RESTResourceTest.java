@@ -22,10 +22,10 @@ public class RESTResourceTest {
 
         RESTResource resource =  new RESTResource(cs);
         resource.getAndIncrementCounterValue();
-        resource.getAndIncrementCounterValue();
-        resource.getAndIncrementCounterValue();
+        //resource.getAndIncrementCounterValue();
+        //resource.getAndIncrementCounterValue();
 
-        CounterValue andIncrement = Mockito.verify(cs, Mockito.times(2)).getAndIncrement();
+        CounterValue andIncrement = Mockito.verify(cs, Mockito.times(1)).getAndIncrement();
 
         Mockito.verifyNoMoreInteractions(cs);
 
