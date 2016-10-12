@@ -29,6 +29,7 @@ public class RESTResource {
 
     @GET
     public CounterValue getAndIncrementCounterValue() {
+        counterService.getAndIncrement();
         return counterService.getAndIncrement();
     }
 
