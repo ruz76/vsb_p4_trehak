@@ -27,4 +27,8 @@ public class CounterService {
     public double getTestDouble(double vstup) {
         return vstup + testconstant.get();
     }
+
+    public void set(int value) {
+        counter.set(value);
+    }
 }
